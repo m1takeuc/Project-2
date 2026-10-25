@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Project 2 Report</title>
+        <meta charset="UTF-8">
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <p><strong>Matthew Takeuchi</strong> — <em>m1takeuc@ucsd.edu</em></p>
+        </header>
+
+        <main>
+            <h2>Proposition: The Global Financial Crisis rocked the world, causing massive inflation followed by massive disinflation.</h2>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img src="08_red.png" alt="" width = 600 height = 800/>
+                    <figcaption>CHAOS IN 08: How the Global Financial Crisis caused massive worldwide inflation, followed by massive disinflation.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>The chart is painted and filled in Red to showcase the severity of the inflation. This gives context to the reader that inflation is bad, as charts trending upwards usually represent financial success or appreciation of an asset.</li>
+                    <li>The data is filtered to post 2001, as it gives adequate pre and post 2008 context for inflation rates.</li>
+                    <li>The title is bolded and in block letters to give emphasis on the state of the economy in 2008, to prompt the reader with a better understanding of the sentiment during that time period.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img src="08_blue.png" alt="" width = 600 height = 700/>
+                    <figcaption>Decades of Progress: Worldwide inflation stablizes, and shakes off the Global Financial Crisis</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>The chart uses a neutral blue color, giving the reader a sense of calamity and easing inflation, extenuating the decreasing inflation.</li>
+                    <li>The data includes all years available in the dataset to give accurate historical context.</li>
+                    <li>The 2008 Recession label shows the insignificance of the inflation change relative to all other years.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+
+                <p>
+
+This project has pushed the limits for me, for what can be considered deceptive versus graphic enhancements. For example, the techniques I employed in Figure 1 were simply due to what I felt was appropriate. Most charts, especially financial charts, have upward trends that show growth or a positive message, but inflation is a negative one. This pushed me to make the chart red to showcase it was actually a bad thing there was an upward trend. The more controversial change is that the data is filtered to just the past 20 or so years. While some would criticize this as “hiding” historical inflation, inflation is felt relative to its most recent years, the same way that interest rates are. One of the most common arguments in homebuying today is that interest rates aren't actually that high when you zoom out and look at the bigger picture. While this is true, it ignores the massive increase in home prices that have happened as a result of sub 5% rates, the same way that inflation around 2008 was low and stable for that period. This is furthered by how people actually felt during that time, prices were fluctuating seemingly daily and many had no idea what financial picture they would wake up to find themselves in tomorrow. 
+                </p>
+<p>On the other hand, Figure 2 shows that historical worldwide inflation was much more volatile, and the 2008 Recession was just a blip in the picture. This is also an accurate statement, as many other countries went through rapid inflation and disinflation historically prior to 2008. There are a few issues with this interpretation, just like in Figure 1. Firstly, inflation is felt relative to its closest years, so adding historical context doesn’t help much. Someone accustomed to 20% inflation, like in other countries like Colombia (I am half Colombian), don’t feel inherently squeezed by it year over year. Secondly, the data equally weighs all countries together. While this is an issue with Figure 1 as well, there were more frequent and severe periods of hyperinflation in other countries prior to 2008. This skews the data as a country with 200,000 residents will have the same impact on the worldwide average inflation as a country with billions of residents. Some historical examples include Brazil, who had inflation of 20,000% in some years. A more accurate representation of this data would account for the population of the country, calculating average inflation per person in the world by their country. This would still show 2008 was not an inflation anomaly, but it would represent this data more accurately. 
+</p>
+    <p>
+While the central idea that inflation was significantly rocky during the 2008 recession is plausible, I truly believe there is no right or wrong answer. There are many things that are tough to visualize alongside this, like personal sentiment during that time. Both Figures have areas for improvement to make the visualizations more accurate and objective, at the risk of sacrificing visual emphasis. 
+</p>
+            </section>
+        </main>
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
